@@ -1,11 +1,12 @@
-a = int(input("Enter how many odd numbers to generate: "))
+def generate_odd_series(a: int) -> str:
+    series = [str(2 * i + 1) for i in range(a)]
+    return ",".join(series)
 
-odds = []
-num = 1
-
-for i in range(a):
-    odds.append(str(num))
-    num += 2
 
 # output
-print("Odd number series:", ", ".join(odds))
+if __name__ == "__main__":
+    try:
+        a = int(input("Enter the number of odd numbers to generate: "))
+        print("Odd Number Series:", generate_odd_series(a))
+    except ValueError as e:
+        print("Invalid input:", e)
